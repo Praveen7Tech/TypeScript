@@ -103,3 +103,24 @@ function getUserName(userDetails:Details){
 getUserName(userDetails)
 
 
+// Function Overloading
+
+function add(num1:number, num2:number): number;
+function add(num1:string, num2:string): string;
+function add(num1:any,num2:any): any {
+    return num1 + num2
+}
+
+add(2,2)         // 4
+add("2", "2")    // 22
+
+// Generics (infer data types)
+
+function getAge <T> ( age: T) : T {
+    return age
+}
+
+getAge <string> ("25")
+getAge <number> (25)
+
+
