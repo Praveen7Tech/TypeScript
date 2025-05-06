@@ -1,27 +1,22 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var name = "praveen";
-var age = 25;
-var isCool = true;
-function greet(name) {
-    return "Hello ".concat(name);
+// Infer Types (Implicit Types)
+var userDetails = {
+    name: "praveen",
+    age: "25", // union
+    place: "kochi",
+    salary: 50000,
+};
+function getUserName(userDetails) {
+    return userDetails.name;
 }
-console.log(greet(name));
-console.log("age", age);
-console.log("name", name);
-//Array & objects
-var scores = [1, 2, 3, 4, 5];
-var people = [
-    { name: "praveen", age: 25 },
-    { name: "rohith", age: 27 },
-    { name: "felwin", age: 22 }
-];
-for (var _i = 0, people_1 = people; _i < people_1.length; _i++) {
-    var person = people_1[_i];
-    console.log("".concat(person.name, " is ").concat(person.age, " years old."));
+getUserName(userDetails);
+function add(num1, num2) {
+    return num1 + num2;
 }
-function filterAdults(people, minAge) {
-    return people.filter(function (person) { return person.age > minAge; });
+add(2, 2); // 4
+add("2", "2"); // 22
+// Generics (infer data types)
+function getAge(age) {
+    return age;
 }
-var adults = filterAdults(people, 23);
-console.log(adults);
+getAge("25");
+getAge(25);
