@@ -1,30 +1,30 @@
-function fetchData(): Promise<string> {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("Data fetched using Promise!");
-      }, 1000);
-    });
-  }
-  
-  fetchData().then(data => {
-    console.log(data);
-  });
-  
-
-// function fetchDataAsync(): Promise<string> {
+// function fetchData(): Promise<string> {
 //     return new Promise((resolve, reject) => {
 //       setTimeout(() => {
-//         resolve("Data fetched using async/await!");
+//         resolve("Data fetched using Promise!");
 //       }, 1000);
 //     });
 //   }
   
-//   async function getData() {
-//     const data = await fetchDataAsync();
+//   fetchData().then(data => {
 //     console.log(data);
-//   }
+//   });
   
-//   getData();
+
+function fetchDataAsync(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Data fetched using async/await!");
+      }, 1000);
+    });
+  }
+  
+  async function getData() {
+    const data = await fetchDataAsync();
+    console.log(data);
+  }
+  
+   getData();
 
 // type Users = Record<string, number>;
 // const userAges: Users = { Abhijith: 25, Babu: 30 };
