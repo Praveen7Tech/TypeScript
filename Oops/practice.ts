@@ -75,20 +75,80 @@
 
 // Method Overloading
 
-class Operation {
-    add(a : number, b : number) : number;
-    add(a : string, b : string) : string;
+// class Operation {
+//     add(a : number, b : number) : number;
+//     add(a : string, b : string) : string;
 
-    add(a: any, b : any) : any {
-        return a + b
-    }
+//     add(a: any, b : any) : any {
+//         return a + b
+//     }
+// }
+
+// const operation = new Operation()
+
+// console.log(operation.add(5,10))
+// console.log(operation.add("hello", "world"))
+
+
+// Encapsulation
+
+// class BankAccount {
+//     private balance : number = 0
+
+//     deposite(amount : number){
+//         if(amount > 0){
+//             this.balance += amount
+//         }
+//     }
+
+//     getBalance() : number {
+//         return this.balance
+//     }
+// }
+
+// const account = new BankAccount()
+
+// account.deposite(500)
+// console.log(account.getBalance())
+//console.log(account.balance())
+
+
+// KeyOf 
+
+// type Person = {
+//     name : string;
+//     age : number
+// }
+// type PersonKey = keyof Person; // "name" | "age"
+
+// ////
+// function personKey<T,K extends keyof T> (obj : T, key : K) : T[K] {
+//     return obj[key]
+// }
+// const person = {name :"Praveen", age :25}
+//  const name = personKey(person, "name")
+
+
+// MAPPED TYPES
+
+interface Person {
+    name : string;
+    age : number
 }
 
-const operation = new Operation()
+// partial
+type partialPerson = Partial<Person>
 
-console.log(operation.add(5,10))
-console.log(operation.add("hello", "world"))
+// readonly
+type readOnlyPerson = Readonly<Person>
 
+// pick
+type pickName = Pick<Person, "name">
 
+// omitt
+type personWithoutage = Omit<Person, "age">
+
+// record
+type StringMap = Record <string, number>
 
 export {}
