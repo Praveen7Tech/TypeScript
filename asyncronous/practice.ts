@@ -11,20 +11,20 @@
 //   });
   
 
-function fetchDataAsync(): Promise<string> {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("Data fetched using async/await!");
-      }, 1000);
-    });
-  }
+// function fetchDataAsync(): Promise<string> {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("Data fetched using async/await!");
+//       }, 1000);
+//     });
+//   }
   
-  async function getData() {
-    const data = await fetchDataAsync();
-    console.log(data);
-  }
+//   async function getData() {
+//     const data = await fetchDataAsync();
+//     console.log(data);
+//   }
   
-   getData();
+//    getData();
 
 // type Users = Record<string, number>;
 // const userAges: Users = { Abhijith: 25, Babu: 30 };
@@ -146,18 +146,18 @@ function fetchDataAsync(): Promise<string> {
 // }
 
 
-class Car {
-    brand : string
+// class Car {
+//     brand : string
     
-    constructor(brand : string){
-      this.brand = brand
-    }
-    showBrand(){
-      console.log(`car brand is: c ${this.brand}`)
-    }
-  }
-  let car1 = new Car("Toyota")
-  car1.showBrand()
+//     constructor(brand : string){
+//       this.brand = brand
+//     }
+//     showBrand(){
+//       console.log(`car brand is: c ${this.brand}`)
+//     }
+//   }
+//   let car1 = new Car("Toyota")
+//   car1.showBrand()
 
 //   interface Person{
 //     name:string;
@@ -181,36 +181,36 @@ class Car {
 
   // Method Overriding
   
-class Parent {
-    greet(){
-      console.log("helloo from parent")
-    }
-  }
-  class child extends Parent{
-    greet(){
-      console.log("heloo from child")
-    }
-  }
+// class Parent {
+//     greet(){
+//       console.log("helloo from parent")
+//     }
+//   }
+//   class child extends Parent{
+//     greet(){
+//       console.log("heloo from child")
+//     }
+//   }
   
-  let c = new child()
-  c.greet()
+//   let c = new child()
+//   c.greet()
 
 
   //method overloading
 
 
-  class MathOperation{
-    add (a:number,b:number,c?:number):number{
-      if(c){
-        return a+b+c
-      }else{
-        return a+b
-      }
-    }
-  }
-  let math = new MathOperation()
-  console.log(math.add(1,2,3))
-  console.log(math.add(1,2))
+  // class MathOperation{
+  //   add (a:number,b:number,c?:number):number{
+  //     if(c){
+  //       return a+b+c
+  //     }else{
+  //       return a+b
+  //     }
+  //   }
+  // }
+  // let math = new MathOperation()
+  // console.log(math.add(1,2,3))
+  // console.log(math.add(1,2))
 
   // class Logger {
   //   log(message: string): void;
@@ -229,84 +229,84 @@ class Parent {
   //encapsulation
 
   
-class Person {
-    private name :string
-    constructor(name:string){
-      this.name = name
-    }
-    getName(){
-      return this.name
-    }
-  }
+// class Person {
+//     private name :string
+//     constructor(name:string){
+//       this.name = name
+//     }
+//     getName(){
+//       return this.name
+//     }
+//   }
   
-  let p1 = new Person("john")
-  console.log(p1.getName())
+//   let p1 = new Person("john")
+//   console.log(p1.getName())
 
 
   //inheritance
 
-  class Animal {
-    sound :string
+  // class Animal {
+  //   sound :string
   
-    constructor(sound : string){
-      this.sound = sound
-    }
-    makeSound(){
-      console.log(this.sound)
-    }
-  }
+  //   constructor(sound : string){
+  //     this.sound = sound
+  //   }
+  //   makeSound(){
+  //     console.log(this.sound)
+  //   }
+  // }
   
-  class Dog extends Animal{
-    constructor(){
-      super("wooffff")
-    }
-  }
+  // class Dog extends Animal{
+  //   constructor(){
+  //     super("wooffff")
+  //   }
+  // }
   
-  let dog = new Dog()
-  dog.makeSound()
+  // let dog = new Dog()
+  // dog.makeSound()
 
 //multiple inheritance
-  interface A {
-    methodA(): void;
-  }
+  // interface A {
+  //   methodA(): void;
+  // }
   
-  interface B {
-    methodB(): void;
-  }
+  // interface B {
+  //   methodB(): void;
+  // }
   
-  class C implements A, B {
-    methodA(): void {
-      console.log("Method A");
-    }
+  // class C implements A, B {
+  //   methodA(): void {
+  //     console.log("Method A");
+  //   }
   
-    methodB(): void {
-      console.log("Method B");
-    }
-  }
-  const obj = new C();
-  obj.methodA(); // Output: Method A    
-    obj.methodB(); // Output: Method B
+  //   methodB(): void {
+  //     console.log("Method B");
+  //   }
+  // }
+  // const obj = new C();
+  // obj.methodA(); // Output: Method A    
+  //   obj.methodB(); // Output: Method B
 
     
   //polymorphism
 
-  class Shape {
-    draw(){
-      console.log("drawing a shape")
-    }
-  }
-  class Circle extends Shape{
-    draw(){
-      console.log("drawing a circle")
-    }
-  }
+//   class Shape {
+//     draw(){
+//       console.log("drawing a shape")
+//     }
+//   }
+//   class Circle extends Shape{
+//     draw(){
+//       console.log("drawing a circle")
+//     }
+//   }
   
-  let s1 = new Shape()
-  s1.draw()
+//   let s1 = new Shape()
+//   s1.draw()
 
   
-let c1 = new Circle();
-c1.draw();
+// let c1 = new Circle();
+// c1.draw();
 
 //abstract class
 
@@ -841,51 +841,51 @@ c1.draw();
 
 //unknown vs any
 
-function handleInput(input: unknown) {
-    if (typeof input === "string") {
-      console.log("String length:", input.length);
-    } else if (typeof input === "number") {
-      console.log("Square:", input * input);
-    }else if(typeof input ==="boolean"){
-      console.log(input)
-    }else if(Array.isArray(input) ){
-      console.log(input)
-    } else {
-      console.log("Unknown type");
-    }
-  }
-  handleInput("hello");
-  handleInput(7);
-  handleInput(true);
-  handleInput([1, 2, 3]);
-  handleInput(null);
-  handleInput({ name: "Abhi" });
+// function handleInput(input: unknown) {
+//     if (typeof input === "string") {
+//       console.log("String length:", input.length);
+//     } else if (typeof input === "number") {
+//       console.log("Square:", input * input);
+//     }else if(typeof input ==="boolean"){
+//       console.log(input)
+//     }else if(Array.isArray(input) ){
+//       console.log(input)
+//     } else {
+//       console.log("Unknown type");
+//     }
+//   }
+//   handleInput("hello");
+//   handleInput(7);
+//   handleInput(true);
+//   handleInput([1, 2, 3]);
+//   handleInput(null);
+//   handleInput({ name: "Abhi" });
 
 
 
-  function add (num1 :number ,num2?:number):number{
-    if(num2){
-      return num1+num2
-    }else{
-      return num1
-    }
-  }
-  console.log(add(3,3))
+//   function add (num1 :number ,num2?:number):number{
+//     if(num2){
+//       return num1+num2
+//     }else{
+//       return num1
+//     }
+//   }
+//   console.log(add(3,3))
   
   
 
-  function adds (...num:number[] ):number{
-  return num.reduce((acc,curr)=>acc+curr,0)
-  }
-  console.log(adds(1,2,3,4,5))
+//   function adds (...num:number[] ):number{
+//   return num.reduce((acc,curr)=>acc+curr,0)
+//   }
+//   console.log(adds(1,2,3,4,5))
   
   
-  interface faces {
-    name:number
-  }
-  let user :faces ={
-   name :34
-  }
+//   interface faces {
+//     name:number
+//   }
+//   let user :faces ={
+//    name :34
+//   }
 
 
   //decorators

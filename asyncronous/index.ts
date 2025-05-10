@@ -1,75 +1,75 @@
 
 
-// Promise
+Promise
 
-// const fetchData = () : Promise <string> => {
-//     return new Promise((resolve, reject) =>{
-//         setTimeout(() => {
-//             const success = false
-//             if(success){
-//                 resolve ("Data fetched sucessfully")
-//             }else{
-//                 reject ("Error fetching data")
-//             }
-//         }, 1000)
-//     })
-// }
+const fetchData = () : Promise <string> => {
+    return new Promise((resolve, reject) =>{
+        setTimeout(() => {
+            const success = false
+            if(success){
+                resolve ("Data fetched sucessfully")
+            }else{
+                reject ("Error fetching data")
+            }
+        }, 1000)
+    })
+}
 
-// fetchData()
-// .then(result => console.log(result))
-// .catch(error => console.log(error))
-
-
-// Promise that resolves to a string
-
-// const fetchData = () : Promise<string> => {
-//     return new Promise((resolve) => {
-//         setTimeout(() =>{
-//             resolve ("Data fetched successfully")
-//         },100)
-//     })
-// }
-
-// fetchData()
-// .then(result => console.log(result))
+fetchData()
+.then(result => console.log(result))
+.catch(error => console.log(error))
 
 
-// Async Function
+Promise that resolves to a string
 
-// function fetchData() : Promise<string> {
-//     return new Promise((resolve, reject) =>{
-//         setTimeout(() =>{
-//             resolve ("Data fetched succesfully compleated..")
-//         }, 100)
-//     })
-// }
+const fetchData = () : Promise<string> => {
+    return new Promise((resolve) => {
+        setTimeout(() =>{
+            resolve ("Data fetched successfully")
+        },100)
+    })
+}
 
-// async function getData () {
-//     const data = await fetchData()
-//     console.log(data)
-// }
+fetchData()
+.then(result => console.log(result))
 
-// getData()
+
+Async Function
+
+function fetchData() : Promise<string> {
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve ("Data fetched succesfully compleated..")
+        }, 100)
+    })
+}
+
+async function getData () {
+    const data = await fetchData()
+    console.log(data)
+}
+
+getData()
 
 
 // INHERITANCE 
 
-// class Animal {
-//     name : string;
-//     constructor(name : string) {
-//         this.name = name
-//     }
+class Animal {
+    name : string;
+    constructor(name : string) {
+        this.name = name
+    }
 
-//     makeSound() : void {
-//         console.log(`${this.name} makes sound..`)
-//     }
-// }
+    makeSound() : void {
+        console.log(`${this.name} makes sound..`)
+    }
+}
 
-// class Dog extends Animal {
-//     bark() : void {
-//         console.log(`${this.name} bark`)
-//     }
-// }
+class Dog extends Animal {
+    bark() : void {
+        console.log(`${this.name} bark`)
+    }
+}
 
 // const dog = new Dog("Thanos")
 
@@ -145,28 +145,72 @@
 
 
 /// API FETCH 
-interface Data {
-    id : number;
-    name : string
+// interface Data {
+//     id : number;
+//     name : string
+// }
+
+// async function fetchData() : Promise<void> {
+//     try {
+//         const response = await fetch('http://sample.com')
+//         const data : Data = await response.json()
+
+//         console.log("Fetched data", data)
+//     } catch (error) {
+//         console.error("Error while fetching data..", error)
+//     }
+// }
+
+// fetchData()
+
+
+/////////////////////////////////////////////////
+
+
+// MAPPED TYPES
+
+interface Person {
+    name : string;
+    age : number;
+    email : string;
 }
 
-async function fetchData() : Promise<void> {
-    try {
-        const response = await fetch('http://sample.com')
-        const data : Data = await response.json()
+type read = Readonly<Person>
 
-        console.log("Fetched data", data)
-    } catch (error) {
-        console.error("Error while fetching data..", error)
+type readonly = {
+    readonly name : string
+    readonly age : string
+}
+
+type part = Partial<Person>
+
+type partial = {
+    name ?: string
+    age ?: number
+    email ?: string
+}
+
+type pic = Pick<Person, "name">
+
+type omit = Omit<Person, "age">
+
+type record = Record<string, number>
+
+
+
+////////////////////////////////
+
+
+function Area(val1 : number, val2 ?: number) : number {
+    if(val2 === undefined){
+        return val1 * val1
+    }else{
+        return val1 * val2
     }
 }
 
-fetchData()
-
-
-
-
-
+console.log(Area(5))
+console.log(Area(5,4))
 
 
 

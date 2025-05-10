@@ -1,132 +1,132 @@
 
-// Getters ans Setters
+Getters ans Setters
 
-// class Person {
-//     private _name : string
-//     constructor(name : string){
-//         this._name = name
-//     }
+class Person {
+    private _name : string
+    constructor(name : string){
+        this._name = name
+    }
 
-//     get name(): string {
-//         return this._name
-//     }
+    get name(): string {
+        return this._name
+    }
 
-//     set name(newName : string) {
-//         this._name = newName
-//     }
-// }
+    set name(newName : string) {
+        this._name = newName
+    }
+}
 
-// const person = new Person("Praveen")
+const person = new Person("Praveen")
 
-// console.log(person.name)
+console.log(person.name)
 
-// Method Overriding
+Method Overriding
 
-// class Animal {
-//     speak() : void {
-//         console.log("Animal speaks")
-//     }
+class Animal {
+    speak() : void {
+        console.log("Animal speaks")
+    }
 
-// }
+}
 
-// class Dog extends Animal {
-//     speak() : void {
-//         console.log("Dog bark..")
-//     }
-// }
+class Dog extends Animal {
+    speak() : void {
+        console.log("Dog bark..")
+    }
+}
 
-// const dog = new Dog()
-// dog.speak()
-
-
-// class
-
-// class Person {
-//     name : string;
-//     age : number
-//     constructor(name:string, age:number){
-//         this.name = name
-//         this.age = age
-//     }
-
-//     greet(){
-//         console.log(`hai my name is ${this.name} and i am ${this.age} years old`)
-//     }
-// }
-
-// const person = new Person("praveen", 25)
-
-// person.greet()
+const dog = new Dog()
+dog.speak()
 
 
-// Static properties and methods
+class
 
-// class Maths {
-//     static num = 10
-//     static multiply(value : number): number {
-//         return value * this.num
-//     }
-// }
+class Person {
+    name : string;
+    age : number
+    constructor(name:string, age:number){
+        this.name = name
+        this.age = age
+    }
 
-// console.log(Maths.num)
-// console.log(Maths.multiply(5))
+    greet(){
+        console.log(`hai my name is ${this.name} and i am ${this.age} years old`)
+    }
+}
 
+const person = new Person("praveen", 25)
 
-
-// Method Overloading
-
-// class Operation {
-//     add(a : number, b : number) : number;
-//     add(a : string, b : string) : string;
-
-//     add(a: any, b : any) : any {
-//         return a + b
-//     }
-// }
-
-// const operation = new Operation()
-
-// console.log(operation.add(5,10))
-// console.log(operation.add("hello", "world"))
+person.greet()
 
 
-// Encapsulation
+Static properties and methods
 
-// class BankAccount {
-//     private balance : number = 0
+class Maths {
+    static num = 10
+    static multiply(value : number): number {
+        return value * this.num
+    }
+}
 
-//     deposite(amount : number){
-//         if(amount > 0){
-//             this.balance += amount
-//         }
-//     }
-
-//     getBalance() : number {
-//         return this.balance
-//     }
-// }
-
-// const account = new BankAccount()
-
-// account.deposite(500)
-// console.log(account.getBalance())
-//console.log(account.balance())
+console.log(Maths.num)
+console.log(Maths.multiply(5))
 
 
-// KeyOf 
 
-// type Person = {
-//     name : string;
-//     age : number
-// }
-// type PersonKey = keyof Person; // "name" | "age"
+Method Overloading
 
-// ////
-// function personKey<T,K extends keyof T> (obj : T, key : K) : T[K] {
-//     return obj[key]
-// }
-// const person = {name :"Praveen", age :25}
-//  const name = personKey(person, "name")
+class Operation {
+    add(a : number, b : number) : number;
+    add(a : string, b : string) : string;
+
+    add(a: any, b : any) : any {
+        return a + b
+    }
+}
+
+const operation = new Operation()
+
+console.log(operation.add(5,10))
+console.log(operation.add("hello", "world"))
+
+
+Encapsulation
+
+class BankAccount {
+    private balance : number = 0
+
+    deposite(amount : number){
+        if(amount > 0){
+            this.balance += amount
+        }
+    }
+
+    getBalance() : number {
+        return this.balance
+    }
+}
+
+const account = new BankAccount()
+
+account.deposite(500)
+console.log(account.getBalance())
+console.log(account.balance())
+
+
+KeyOf 
+
+type Person = {
+    name : string;
+    age : number
+}
+type PersonKey = keyof Person; // "name" | "age"
+
+////
+function personKey<T,K extends keyof T> (obj : T, key : K) : T[K] {
+    return obj[key]
+}
+const person = {name :"Praveen", age :25}
+ const name = personKey(person, "name")
 
 
 // MAPPED TYPES
